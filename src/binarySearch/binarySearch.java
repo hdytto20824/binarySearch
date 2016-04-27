@@ -50,12 +50,14 @@ public class binarySearch {
 				System.out.print(search + " is the number " + (middle + 1));
 				break;
 			} else if (search > size[middle]) {
-				left = middle;
+				left = middle + 1;
 				middle = (right + left) / 2;
 			} else if (search < size[middle]) {
-				right = middle;
+				right = middle - 1;
 				middle = (right + left) / 2;
 			}
 		}
+		if (left == right)
+			System.out.print("error");
 	}
 }
